@@ -21,5 +21,11 @@ RSpec.describe StringCalculator do
         expect(string_calculator.add('1,5')).to eq 6
       end
     end
+
+    context 'when input string is invalid' do
+      it 'raise invalid input error' do
+        expect(string_calculator.add('1,\n')).to eq 'Invalid input'
+      end
+    end
   end
 end
